@@ -12,7 +12,7 @@ router.post('/', async (req,res) => {
             !req.body.author ||
             !req.body.publishYear
         ) {
-            return response.status(400).json({
+            return res.status(400).json({
                 message: 'Send all required fields: title, author, publishYear',
             });
         }
