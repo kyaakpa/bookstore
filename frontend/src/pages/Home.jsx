@@ -15,7 +15,7 @@ const Home = () => {
     setloading(true);
 
     axios
-      .get("http://localhost:3000/books")
+      .get("https://bookstore-production-75c2.up.railway.app/books")
       .then((res) => {
         console.log(res.data);
         setBooks(res.data.data);
@@ -49,7 +49,7 @@ const Home = () => {
       </div>
       {loading ? (
         <Spinner />
-      ) : showType === 'table' ? (
+      ) : showType === "table" ? (
         <BooksTable books={books} />
       ) : (
         <BooksCard books={books} />

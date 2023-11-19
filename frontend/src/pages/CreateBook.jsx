@@ -22,15 +22,15 @@ const CreateBook = () => {
     setLoading(true);
 
     axios
-      .post("http://localhost:3000/books", data)
+      .post("https://bookstore-production-75c2.up.railway.app/books", data)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar('Book Created Successfully', {variant: 'success'})
+        enqueueSnackbar("Book Created Successfully", { variant: "success" });
         navigate("/");
       })
       .catch((error) => {
         setLoading(false);
-        enqueueSnackbar('Error', {variant: 'error'})        
+        enqueueSnackbar("Error", { variant: "error" });
         console.log(error);
       });
   };
